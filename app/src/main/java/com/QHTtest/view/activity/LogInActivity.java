@@ -25,7 +25,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> {
 
     @Override
     protected void createPresenter() {
-
+        
     }
 
     @Override
