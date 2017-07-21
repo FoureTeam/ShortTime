@@ -1,7 +1,10 @@
 package com.QHTtest.view.fragment;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.view.View;
+
+import com.QHTtest.R;
 
 /**
  * Created by 仇海涛 on 2017/7/21.
@@ -9,10 +12,16 @@ import android.view.View;
  * content ：
  */
 
-public class Frag extends BaseFragment{
+public class RecommendFrag extends BaseFragment {
+
+
+    private TabLayout recommentFragVp;
+    private TabLayout recommentFragTb;
+
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-
+        recommentFragVp = view.findViewById(R.id.recommentfrag_viewpager);
+        recommentFragTb = view.findViewById(R.id.recommentfrag_tablayout);
     }
 
     @Override
@@ -32,6 +41,8 @@ public class Frag extends BaseFragment{
 
     @Override
     public int getLayout() {
-        return 0;
+        return R.layout.recommendfrag;
     }
+
+
 }
