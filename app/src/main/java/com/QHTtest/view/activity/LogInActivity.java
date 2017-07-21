@@ -29,7 +29,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> {
     }
     @Override
     protected void initListener() {
-
+ 
     }
 
     @Override
