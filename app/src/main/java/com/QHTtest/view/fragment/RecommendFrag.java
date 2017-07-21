@@ -2,10 +2,13 @@ package com.QHTtest.view.fragment;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.QHTtest.R;
+
+import java.util.ArrayList;
 
 
 /**
@@ -19,6 +22,8 @@ public class RecommendFrag extends BaseFragment {
 
     private ViewPager recommentFragVp;
     private TabLayout recommentFragTb;
+    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private ArrayList<String> strings = new ArrayList<>();
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
@@ -29,6 +34,13 @@ public class RecommendFrag extends BaseFragment {
 
     @Override
     protected void initData() {
+
+        strings.add("热门");
+        strings.add("关注");
+
+        fragments.add(new RecommendHotFrag());
+        fragments.add(new RecommendAttentionFrag());
+
 
     }
 
