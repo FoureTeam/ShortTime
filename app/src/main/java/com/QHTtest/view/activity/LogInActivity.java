@@ -46,7 +46,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> {
         reg = (TextView) findViewById(R.id.regTextView_Login);
         back = (TextView) findViewById(R.id.backTextView_Login);
     }
- 
+
     @Override
     protected void initData() {
 
@@ -57,4 +57,5 @@ public class LogInActivity extends BaseActivity<PostPresenter> {
         //设置布局文件
         return R.layout.activity_login;
     }
+    
 }
