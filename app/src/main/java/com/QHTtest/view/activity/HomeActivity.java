@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -26,7 +27,7 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class HomeActivity extends BaseActivity<HomePresenter> implements BottomNavigationBar.OnTabSelectedListener {
+public class HomeActivity extends BaseActivity<HomePresenter> implements BottomNavigationBar.OnTabSelectedListener, View.OnClickListener {
 
     private RecyclerView class_frag_recy;
     private Map<String, String> map = new HashMap<>();
@@ -75,6 +76,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_rela = (RelativeLayout) findViewById(R.id.home_rela);
         home_startDrawerLayout = (RelativeLayout) findViewById(R.id.home_startDrawerLayout);
 
+        home_toolbar_head_img.setOnClickListener(this);
 
     }
 
@@ -109,7 +111,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                home_drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+                home_drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             }
 
             @Override
@@ -214,5 +216,25 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     @Override
     public void onTabReselected(int position) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.home_toolbar_head_img:
+                if (home_drawer.isDrawerOpen(Gravity.START)){
+                    home_drawer.closeDrawers();
+                }else {
+                    home_drawer.openDrawer(Gravity.START);
+                }
+                break;
+
+              /*  Intent intent = new Intent(HomeActivity.this,LogInActivity.class);
+                startActivity(intent);*/
+
+
+            default:
+                break;
+        }
     }
 }
