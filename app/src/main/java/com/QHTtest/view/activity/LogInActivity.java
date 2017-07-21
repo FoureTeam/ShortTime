@@ -46,7 +46,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> {
         reg = (TextView) findViewById(R.id.regTextView_Login);
         back = (TextView) findViewById(R.id.backTextView_Login);
     }
-
+ 
     @Override
     protected void initData() {
 
