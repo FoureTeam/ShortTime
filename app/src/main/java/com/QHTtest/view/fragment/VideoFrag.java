@@ -20,8 +20,8 @@ public class VideoFrag extends BaseFragment {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        recommentFragVp = view.findViewById(R.id.videofrag_viewpager);
-        recommentFragTb = view.findViewById(R.id.videofrag_tablayout);
+//        recommentFragVp = view.findViewById(R.id.videofrag_viewpager);
+//        recommentFragTb = view.findViewById(R.id.videofrag_tablayout);
     }
 
     @Override

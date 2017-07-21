@@ -20,8 +20,8 @@ public class RecommendFrag extends BaseFragment {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        recommentFragVp = view.findViewById(R.id.recommentfrag_viewpager);
-        recommentFragTb = view.findViewById(R.id.recommentfrag_tablayout);
+//        recommentFragVp = view.findViewById(R.id.recommentfrag_viewpager);
+//        recommentFragTb = view.findViewById(R.id.recommentfrag_tablayout);
     }
 
     @Override
