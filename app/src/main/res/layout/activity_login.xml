@@ -3,9 +3,9 @@
     android:id="@+id/mainLinearLayout"
     style="@style/Layout.Linear">
 
- <!--   <include
+    <include
         android:id="@+id/topInclude_activityLogin"
-        layout="@layout/include_toolbar" />-->
+        layout="@layout/include_toolbar" />
 
     <LinearLayout
         android:id="@+id/contentLinearLayout_activityLogin"
@@ -13,7 +13,7 @@
 
         <EditText
             android:id="@+id/usernameEditText_activityLogin"
-            style="@style/EditText.Username" />
+            style="@style/EditText.UserPhone" />
 
         <EditText
             android:id="@+id/passwordEditText_activityLogin"

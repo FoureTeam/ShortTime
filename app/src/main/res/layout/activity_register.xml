@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/mainLinearLayout"
+    style="@style/Layout.Linear">
+
+    <include
+        android:id="@+id/topInclude_activityReg"
+        layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/contentLinearLayout_activityReg"
+        style="@style/Layout.Login">
+        <EditText
+            android:id="@+id/userHea_Reg"
+            style="@style/EditText.Username"
+            android:hint="请输入随便写"/>
+        <EditText
+            android:id="@+id/userName_Reg"
+            style="@style/EditText.Username" />
+
+        <EditText
+            android:id="@+id/userPassword_Reg"
+            style="@style/EditText.Password" />
+
+        <EditText
+            android:id="@+id/userPasswordRepeat_Reg"
+            style="@style/EditText.Password"
+            android:hint="请再次输入密码" />
+        <EditText
+            android:id="@+id/userPhone_Reg"
+            style="@style/EditText.UserPhone" />
+        <EditText
+            android:id="@+id/userSex_Reg"
+            style="@style/EditText.Email" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/regTextView_Reg"
+        style="@style/TextView.Login"
+        android:text="注 册" />
 
 </LinearLayout>
