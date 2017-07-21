@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/home_recy_item_ImageView"
+        style="@style/ImageView_ItemClass1"/>
+
+    <TextView
+        android:id="@+id/home_item_TextView"
+        style="@style/TextView_ItemClass1Title"
+        android:layout_alignTop="@+id/home_recy_item_ImageView"
+        android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/home_recy_item_ImageView"
+        android:layout_toEndOf="@+id/home_recy_item_ImageView"/>
+</RelativeLayout>
