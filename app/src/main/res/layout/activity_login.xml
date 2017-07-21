@@ -8,21 +8,20 @@
         layout="@layout/include_toolbar" />
 
     <LinearLayout
-        android:id="@+id/contentLinearLayout_activityLogin"
         style="@style/Layout.Login">
 
         <EditText
-            android:id="@+id/usernameEditText_activityLogin"
+            android:id="@+id/userPhone_Login"
             style="@style/EditText.UserPhone" />
 
         <EditText
-            android:id="@+id/passwordEditText_activityLogin"
+            android:id="@+id/userPassword_Login"
             style="@style/EditText.Password" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/loginTextView_activityLogin"
+        android:id="@+id/login_Login"
         style="@style/TextView.Login" />
 
     <RelativeLayout
@@ -31,12 +30,12 @@
         android:paddingRight="24dip">
 
         <TextView
-            android:id="@+id/regTextView_activityLogin"
+            android:id="@+id/regTextView_Login"
             style="@style/TextView.LoginTips"
             android:text="注册账号" />
 
         <TextView
-            android:id="@+id/backTextView_activityLogin"
+            android:id="@+id/backTextView_Login"
             style="@style/TextView.LoginTips"
             android:layout_alignParentRight="true"
             android:text="找回密码" />
