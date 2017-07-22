@@ -60,8 +60,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> implements View.O
         usernameEditText_activityLogin.setOnClickListener(this);
         passwordEditText_activityLogin = (EditText) findViewById(R.id.passwordEditText_activityLogin);
         passwordEditText_activityLogin.setOnClickListener(this);
-        contentLinearLayout_activityLogin = (LinearLayout) findViewById(R.id.contentLinearLayout_activityLogin);
-        contentLinearLayout_activityLogin.setOnClickListener(this);
+
         loginTextView_activityLogin = (TextView) findViewById(R.id.loginTextView_activityLogin);
         loginTextView_activityLogin.setOnClickListener(this);
         regTextView_activityLogin = (TextView) findViewById(R.id.regTextView_activityLogin);

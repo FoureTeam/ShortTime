@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * content ：
  */
 
-public class RecommendFragVpAdapter extends FragmentPagerAdapter {
+public class VideoFragVpAdapter extends FragmentPagerAdapter {
 
     private ArrayList<Fragment> fragments = new ArrayList<>();
 
 
-    public RecommendFragVpAdapter(FragmentManager fm) {
+    public VideoFragVpAdapter(FragmentManager fm) {
         super(fm);
     }
 
