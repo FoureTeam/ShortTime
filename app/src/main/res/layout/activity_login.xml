@@ -8,6 +8,7 @@
         layout="@layout/include_toolbar" />
 
     <LinearLayout
+        android:id="@+id/contentLinearLayout_activityLogin"
         style="@style/Layout.Login">
 
         <EditText

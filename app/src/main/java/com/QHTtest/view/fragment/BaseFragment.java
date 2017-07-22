@@ -36,9 +36,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = LayoutInflater.from(mActivity).inflate(getLayout(),container,false);
-
-        initView(view,savedInstanceState);
-
         return view;
     }
 
