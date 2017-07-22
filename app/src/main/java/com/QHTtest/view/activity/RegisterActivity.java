@@ -1,8 +1,6 @@
 package com.QHTtest.view.activity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 
 import com.QHTtest.R;
 import com.QHTtest.presenter.PostPresenter;
@@ -27,7 +25,7 @@ public class RegisterActivity extends BaseActivity<PostPresenter> {
 
     @Override
     protected void createPresenter() {
-
+        mPresenter = new PostPresenter();
     }
 
     @Override

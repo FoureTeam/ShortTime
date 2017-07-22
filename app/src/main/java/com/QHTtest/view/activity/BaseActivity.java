@@ -2,7 +2,6 @@ package com.QHTtest.view.activity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -126,7 +125,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     }
 
 
-    /********************** activity跳转 **********************************/
+   /* *//********************** activity跳转 **********************************//*
     public void openActivity(Class<?> targetActivityClass) {
         openActivity(targetActivityClass, null);
     }
@@ -147,7 +146,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     public void openActivityAndCloseThis(Class<?> targetActivityClass, Bundle bundle) {
         openActivity(targetActivityClass, bundle);
         this.finish();
-    }
+    }*/
 
     /***************************************************************/
 
