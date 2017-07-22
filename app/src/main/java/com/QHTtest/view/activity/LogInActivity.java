@@ -83,6 +83,7 @@ public class LogInActivity extends BaseActivity<PostPresenter> implements View.O
         return R.layout.activity_login;
     }
 
+
     private void submit() {
         // validate
         String activityLogin = usernameEditText_activityLogin.getText().toString().trim();
@@ -113,4 +114,5 @@ public class LogInActivity extends BaseActivity<PostPresenter> implements View.O
                 break;
         }
     }
+
 }

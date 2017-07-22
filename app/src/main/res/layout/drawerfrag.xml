@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-<TextView android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:gravity="center"
-          android:text="drawerfrag"
-/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/Layout.DrawerTop">
+
+        <LinearLayout style="@style/Layout.LinearTop">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView_draw"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/raw_1499936862" />
+
+            <TextView
+                android:id="@+id/userName_draw"
+                style="@style/TextView.Draw_userName" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signature_draw"
+            style="@style/TextView.Draw_signature" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayout_personal"
+        style="@style/Layout.Linear">
+
+        <TextView
+            android:id="@+id/attention_draw"
+            style="@style/TextView.UserTitle"
+            android:text="我的关注" />
+
+        <TextView
+            android:id="@+id/collection_draw"
+            style="@style/TextView.UserTitle"
+            android:text="我的收藏" />
+
+        <TextView
+            android:id="@+id/searchFriend_draw"
+            style="@style/TextView.UserTitle"
+            android:text="搜索好友" />
+
+        <TextView
+            android:id="@+id/alerts_draw"
+            style="@style/TextView.UserTitle"
+            android:text="消息通知" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/works_draw"
+            style="@style/TextView.Draw_Bottm"
+            android:text="我的作品" />
+
+        <TextView
+            android:id="@+id/setting_draw"
+            style="@style/TextView.Draw_Bottm"
+            android:text="设置" />
+    </LinearLayout>
 </LinearLayout>
