@@ -145,9 +145,12 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         navigationbar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
 
         //初始化子导航页
-        BottomNavigationItem recommendItem = new BottomNavigationItem(R.mipmap.chat_press, "推荐");
-        BottomNavigationItem crossTalkItem = new BottomNavigationItem(R.mipmap.discovery_press, "段子");
-        BottomNavigationItem videoItem = new BottomNavigationItem(R.mipmap.me_press, "视频");
+        BottomNavigationItem recommendItem = new BottomNavigationItem(R.mipmap.ic_recommend_r, "推荐");
+        recommendItem.setInActiveColor(R.mipmap.ic_recommend);
+        BottomNavigationItem crossTalkItem = new BottomNavigationItem(R.mipmap.ic_crosstalk_c, "段子");
+        crossTalkItem.setInactiveIconResource(R.mipmap.ic_crosstalk);
+        BottomNavigationItem videoItem = new BottomNavigationItem(R.mipmap.ic_video_v, "视频");
+        videoItem.setInactiveIconResource(R.mipmap.ic_video);
 
         //添加子导航页
         navigationbar.addItem(recommendItem);

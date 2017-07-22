@@ -20,7 +20,7 @@
     <style name="Layout.DrawerTop" parent="Control">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_height">145dp</item>
         <item name="android:background">@mipmap/ic_draw_background</item>
     </style>
 

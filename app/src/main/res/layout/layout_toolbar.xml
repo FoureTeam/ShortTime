@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="20170721周五"
+            android:textColor="@color/white"
         />
         <ImageView
             android:id="@+id/home_toolbar_edit_img"
@@ -32,7 +33,7 @@
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/raw_1500034665"
+            android:src="@mipmap/ic_shard"
         />
 
     </RelativeLayout>
