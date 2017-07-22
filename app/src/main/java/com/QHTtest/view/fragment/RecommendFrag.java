@@ -22,16 +22,16 @@ import java.util.ArrayList;
 public class RecommendFrag extends BaseFragment {
 
 
-    private ViewPager recommentFragVp;
-    private TabLayout recommentFragTb;
+    private ViewPager recommendFragVp;
+    private TabLayout recommendFragTb;
     private ArrayList<Fragment> fragments = new ArrayList<>();
 
     private RecommendFragVpAdapter adapter;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        recommentFragVp = (ViewPager) view.findViewById(R.id.recommentfrag_viewpager);
-        recommentFragTb = (TabLayout) view.findViewById(R.id.recommentfrag_tablayout);
+        recommendFragVp = (ViewPager) view.findViewById(R.id.recommentfrag_viewpager);
+        recommendFragTb = (TabLayout) view.findViewById(R.id.recommentfrag_tablayout);
 
     }
 
@@ -44,17 +44,18 @@ public class RecommendFrag extends BaseFragment {
         adapter = new RecommendFragVpAdapter(getActivity().getSupportFragmentManager());
         adapter.setData(fragments);
 
-        recommentFragTb.setTabTextColors(Color.GRAY,Color.BLUE);
-        recommentFragTb.setSelectedTabIndicatorColor(Color.BLUE);
-        recommentFragTb.addTab(recommentFragTb.newTab().setText("热门"));
-        recommentFragTb.addTab(recommentFragTb.newTab().setText("关注"));
-        recommentFragVp.setAdapter(adapter);
-        recommentFragVp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(recommentFragTb));
-        recommentFragTb.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        recommendFragTb.setTabTextColors(Color.GRAY,Color.BLUE);
+
+        recommendFragTb.setSelectedTabIndicatorColor(Color.BLUE);
+        recommendFragTb.addTab(recommendFragTb.newTab().setText("热门"));
+        recommendFragTb.addTab(recommendFragTb.newTab().setText("关注"));
+        recommendFragVp.setAdapter(adapter);
+        recommendFragVp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(recommendFragTb));
+        recommendFragTb.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                recommentFragVp.setCurrentItem(position);
+                recommendFragVp.setCurrentItem(position);
             }
 
             @Override
