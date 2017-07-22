@@ -44,14 +44,14 @@ public class DrawerFrag extends BaseFragment {
         //图片
         Drawable drawable = getResources().getDrawable(ic_drawable);
         //大小
-        drawable.setBounds(0, 0, 80, 80);
+        drawable.setBounds(0, 0, 55, 55);
         //方向
         textView.setCompoundDrawables(null, drawable, null, null);
     }
 
     private void initRight(TextView textView, int ic_drawable) {
         Drawable drawable = getResources().getDrawable(ic_drawable);
-        drawable.setBounds(0, 0, 50, 50);
+        drawable.setBounds(0, 0, 45, 45);
         textView.setCompoundDrawables(drawable, null, null, null);
     }
 

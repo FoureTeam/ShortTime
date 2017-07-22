@@ -12,8 +12,6 @@ import com.QHTtest.view.adapter.VideoFragVpAdapter;
 
 import java.util.ArrayList;
 
-import static com.QHTtest.R.layout.videofrag;
-
 /**
  * Created by 仇海涛 on 2017/7/21.
  * class ：
@@ -83,7 +81,7 @@ public class VideoFrag extends BaseFragment {
 
     @Override
     public int getLayout() {
-        return videofrag;
+        return R.layout.videofrag;
     }
 
 
