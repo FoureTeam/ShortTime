@@ -26,13 +26,16 @@ public class VideoFrag extends BaseFragment {
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private VideoFragVpAdapter adapter;
 
+    //初始化控件
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
+
         videoFragVp = (ViewPager) view.findViewById(R.id.videofrag_viewpager);
         videoFragTb = (TabLayout) view.findViewById(R.id.videofrag_tablayout);
 
     }
 
+    //数据加载
     @Override
     protected void initData() {
 
@@ -69,16 +72,19 @@ public class VideoFrag extends BaseFragment {
         });
     }
 
+    //监听
     @Override
     protected void initeListener() {
 
     }
 
+    //创建presenter
     @Override
     protected void createPresenter() {
 
     }
 
+    //返回布局的id
     @Override
     public int getLayout() {
         return R.layout.videofrag;

@@ -2,16 +2,15 @@ package com.QHTtest.view.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.QHTtest.R;
+import com.QHTtest.folding.FoldingPaneLayout;
 import com.QHTtest.presenter.HomePresenter;
 import com.QHTtest.view.adapter.HomeRecyLeftAda;
 import com.QHTtest.view.fragment.CrossTalkFrag;
@@ -43,7 +42,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     private VideoFrag videoFrag;
     private ArrayList<Fragment> fragments;
     private Toolbar home_toolbar;
-    private DrawerLayout home_drawer;
+    private FoldingPaneLayout home_drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +66,16 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         //初始化控件
 
         home_toolbar = (Toolbar) findViewById(R.id.layout_toolbar);
-        home_drawer = (DrawerLayout) findViewById(R.id.layout_drawer);
+
+
 
         home_toolbar_head_img = (CircleImageView) findViewById(R.id.home_toolbar_head_img);
         home_toolbar_text = (TextView) findViewById(R.id.home_toolbar_text);
         home_toolbar_edit_img = (ImageView) findViewById(R.id.home_toolbar_edit_img);
-        navigationbar = (BottomNavigationBar) findViewById(R.id.navigationbar);
-        home_rela = (RelativeLayout) findViewById(R.id.home_rela);
+        navigationbar = (BottomNavigationBar) findViewById(R.id.home_bottombar);
+        home_rela = (RelativeLayout) findViewById(R.id.home_startDrawerLayout);
         home_startDrawerLayout = (RelativeLayout) findViewById(R.id.home_startDrawerLayout);
-
+        home_drawer = (FoldingPaneLayout) findViewById(R.id.layout_drawer);
         home_toolbar_head_img.setOnClickListener(this);
 
     }
@@ -94,9 +94,11 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         fragments.add(crossTalkFrag);
         fragments.add(videoFrag);
 
+        home_drawer.setProhibitSideslip(true);
+
         setSupportActionBar(home_toolbar);
 
-        home_drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+      /*  home_drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
         home_drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -118,7 +120,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
             public void onDrawerStateChanged(int newState) {
                 super.onDrawerStateChanged(newState);
             }
-        });
+        });*/
 
         //初始化navigationbar
         initBottomNavigationBar();
@@ -172,9 +174,9 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_toolbar_text.setText("推荐");
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.home_rela, recommendFrag)
-                .add(R.id.home_rela, crossTalkFrag)
-                .add(R.id.home_rela, videoFrag)
+                .add(R.id.home_rl_parentview, recommendFrag)
+                .add(R.id.home_rl_parentview, crossTalkFrag)
+                .add(R.id.home_rl_parentview, videoFrag)
                 .hide(fragments.get(1))
                 .hide(fragments.get(2))
                 .commitAllowingStateLoss();
@@ -225,16 +227,12 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.home_toolbar_head_img:
-                if (home_drawer.isDrawerOpen(Gravity.START)){
-                    home_drawer.closeDrawers();
+                if (home_drawer.isOpen()){
+                    home_drawer.closePane();
                 }else {
-                    home_drawer.openDrawer(Gravity.START);
+                    home_drawer.openPane();
                 }
                 break;
-
-              /*  Intent intent = new Intent(HomeActivity.this,LogInActivity.class);
-                startActivity(intent);*/
-
 
             default:
                 break;
