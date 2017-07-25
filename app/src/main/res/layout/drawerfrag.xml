@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout style="@style/Layout.DrawerTop" android:layout_height="145dp">
+    <LinearLayout
+        style="@style/Layout.DrawerTop"
+        android:layout_height="145dp">
 
         <LinearLayout
-            android:layout_weight="5"
             style="@style/Layout.LinearTop"
-            android:gravity="center_vertical"
-        >
+            android:layout_weight="5"
+            android:gravity="center_vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView_draw"
@@ -18,17 +19,17 @@
                 android:layout_height="50dp"
 
                 android:layout_centerVertical="true"
-                android:src="@mipmap/raw_1499936862"/>
+                android:src="@mipmap/raw_1499936862" />
 
             <TextView
                 android:id="@+id/userName_draw"
-                style="@style/TextView.Draw_userName"/>
+                style="@style/TextView.Draw_userName" />
         </LinearLayout>
 
         <TextView
-            android:layout_weight="1"
             android:id="@+id/signature_draw"
-            style="@style/TextView.Draw_signature"/>
+            style="@style/TextView.Draw_signature"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,7 +39,8 @@
         <TextView
             android:id="@+id/searchFriend_draw"
             style="@style/TextView.UserTitle"
-            android:text="搜索好友"/>
+            android:text="搜索好友" />
+
         <TextView
             android:id="@+id/attention_draw"
             style="@style/TextView.UserTitle"
