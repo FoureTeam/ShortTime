@@ -137,6 +137,7 @@
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:text">椰汁奶茶</item>
     </style>
+
     <style name="TextView.Draw_signature" parent="Control">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
@@ -162,6 +163,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="TextView.Draw_Bottm" parent="Control">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -213,4 +215,56 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_width">fill_parent</item>
     </style>
+
+    <style name="RecyclerView.Main" parent="Control">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="BottomNavigationBar.Draw" parent="Control">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="RelativeLayout.Draw" parent="Control">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_above">@id/navigationbar</item>
+    </style>
+
+    <style name="RelativeLayout.DrawSideslipping" parent="Control">
+        <item name="android:layout_width">304dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:background">#ffffff</item>
+    </style>
+
+    <style name="Toolbar.Tool" parent="Control">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colortoolbar</item>
+    </style>
+
+    <style name="CircleImageView.Tool" parent="Control">
+        <item name="android:layout_width">39dp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TextView.ToolTitle" parent="Control">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ImageView.ToolTitleRight" parent="Control">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
 </resources>
