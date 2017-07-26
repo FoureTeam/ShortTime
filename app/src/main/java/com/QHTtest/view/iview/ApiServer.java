@@ -20,13 +20,16 @@ import retrofit2.http.Url;
  */
 
 public interface ApiServer {
-
+    //get请求
     @GET()
     Observable<String> getTest(@Url String url,@QueryMap Map<String,String> map);
 
+    //post请求
     @FormUrlEncoded
     @POST()
     Observable<String> postTest(@Url String url,@FieldMap Map<String,String> map);
+
+    //post上传文件
     @FormUrlEncoded
     @POST
     Observable<String> filePost(@Url String url, @Part List<MultipartBody> partsList);
