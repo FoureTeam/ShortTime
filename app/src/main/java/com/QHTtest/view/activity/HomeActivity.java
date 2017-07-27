@@ -80,6 +80,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_toolbar_head_img.setOnClickListener(this);
         home_toolbar_edit_img.setOnClickListener(this);
 
+
     }
 
     @Override

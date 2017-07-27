@@ -1,11 +1,16 @@
 package com.QHTtest.view.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.QHTtest.R;
+import com.QHTtest.model.utils.Constant;
+import com.QHTtest.view.activity.LogInActivity;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by 仇海涛 on 2017/7/21.
@@ -13,7 +18,7 @@ import com.QHTtest.R;
  * content ：
  */
 
-public class DrawerFrag extends BaseFragment {
+public class DrawerFrag extends BaseFragment implements View.OnClickListener {
 
     private TextView attention;
     private TextView collection;
@@ -21,6 +26,10 @@ public class DrawerFrag extends BaseFragment {
     private TextView alerts;
     private TextView works;
     private TextView setting;
+    private CircleImageView circleImageView;
+    private boolean userState;
+    private TextView userName;
+    private TextView signature;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
@@ -31,6 +40,10 @@ public class DrawerFrag extends BaseFragment {
         alerts = (TextView) getView().findViewById(R.id.alerts_draw);
         works = (TextView) getView().findViewById(R.id.works_draw);
         setting = (TextView) getView().findViewById(R.id.setting_draw);
+        circleImageView = (CircleImageView) view.findViewById(R.id.circleImageView_draw);
+        userName = (TextView) view.findViewById(R.id.userName_draw);
+        signature = (TextView) view.findViewById(R.id.signature_draw);
+
         //设置表头
         initRight(attention, R.mipmap.ic_draw_attention);
         initRight(collection, R.mipmap.ic_draw_collection);
@@ -39,7 +52,10 @@ public class DrawerFrag extends BaseFragment {
         initTop(works, R.mipmap.ic_draw_works);
         initTop(setting, R.mipmap.ic_draw_setting);
     }
-
+    @Override
+    public int getLayout() {
+        return R.layout.drawerfrag;
+    }
     private void initTop(TextView textView, int ic_drawable) {
         //图片
         Drawable drawable = getResources().getDrawable(ic_drawable);
@@ -63,7 +79,17 @@ public class DrawerFrag extends BaseFragment {
 
     @Override
     protected void initeListener() {
+        circleImageView.setOnClickListener(this);
+    }
 
+    @Override
+    public void onResume() {
+        userState = Constant.mSharedPreferences.getBoolean("userState",false);
+        if (userState){
+            String userNameStr = Constant.mSharedPreferences.getString("userName","");
+            userName.setText(userNameStr);
+        }
+        super.onResume();
     }
 
     @Override
@@ -71,10 +97,19 @@ public class DrawerFrag extends BaseFragment {
 
     }
 
+
+
+
     @Override
-    public int getLayout() {
-        return R.layout.drawerfrag;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.circleImageView_draw:
+                Intent intent = new Intent(getActivity(), LogInActivity.class);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
     }
-
-
 }

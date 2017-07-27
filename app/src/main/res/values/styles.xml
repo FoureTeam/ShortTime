@@ -228,6 +228,8 @@
         <item name="android:layout_alignParentBottom">true</item>
     </style>
 
+
+
     <style name="RelativeLayout.DrawSideslipping" parent="Control">
         <item name="android:layout_width">304dp</item>
         <item name="android:layout_height">match_parent</item>
