@@ -228,11 +228,7 @@
         <item name="android:layout_alignParentBottom">true</item>
     </style>
 
-    <style name="RelativeLayout.Draw" parent="Control">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_above">@id/navigationbar</item>
-    </style>
+
 
     <style name="RelativeLayout.DrawSideslipping" parent="Control">
         <item name="android:layout_width">304dp</item>

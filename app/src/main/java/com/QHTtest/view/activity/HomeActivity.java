@@ -78,6 +78,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_drawer = (FoldingPaneLayout) findViewById(R.id.layout_drawer);
         home_toolbar_head_img.setOnClickListener(this);
 
+
     }
 
     @Override
