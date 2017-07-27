@@ -1,5 +1,6 @@
 package com.QHTtest.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.QHTtest.R;
 import com.QHTtest.folding.FoldingPaneLayout;
@@ -68,7 +70,6 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_toolbar = (Toolbar) findViewById(R.id.layout_toolbar);
 
 
-
         home_toolbar_head_img = (CircleImageView) findViewById(R.id.home_toolbar_head_img);
         home_toolbar_text = (TextView) findViewById(R.id.home_toolbar_text);
         home_toolbar_edit_img = (ImageView) findViewById(R.id.home_toolbar_edit_img);
@@ -77,6 +78,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         home_startDrawerLayout = (RelativeLayout) findViewById(R.id.home_startDrawerLayout);
         home_drawer = (FoldingPaneLayout) findViewById(R.id.layout_drawer);
         home_toolbar_head_img.setOnClickListener(this);
+        home_toolbar_edit_img.setOnClickListener(this);
 
 
     }
@@ -136,7 +138,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
      */
     private void initDrawerFragment() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.home_startDrawerLayout,new DrawerFrag())
+                .replace(R.id.home_startDrawerLayout, new DrawerFrag())
                 .commitAllowingStateLoss();
     }
 
@@ -193,7 +195,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
 
     @Override
     public void onTabSelected(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 home_toolbar_text.setText("推荐");
 
@@ -208,7 +210,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
                 break;
         }
 
-        if (tag != position){
+        if (tag != position) {
             getSupportFragmentManager().beginTransaction().show(fragments.get(position)).hide(fragments.get(tag)).commitAllowingStateLoss();
             tag = position;
         }
@@ -228,11 +230,17 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.home_toolbar_head_img:
-                if (home_drawer.isOpen()){
+                if (home_drawer.isOpen()) {
                     home_drawer.closePane();
-                }else {
+                } else {
                     home_drawer.openPane();
                 }
+                break;
+            case R.id.home_toolbar_edit_img:
+                //跳转页面+Activity2.5跳转动画
+                Intent intent = new Intent(HomeActivity.this, PublishedActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                 break;
 
             default:

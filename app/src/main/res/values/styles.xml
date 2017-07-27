@@ -184,7 +184,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">50dip</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:background">@color/colortoolbar</item>
     </style>
