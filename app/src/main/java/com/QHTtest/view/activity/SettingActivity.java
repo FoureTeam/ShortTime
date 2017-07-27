@@ -1,5 +1,10 @@
 package com.QHTtest.view.activity;
 
+import android.view.View;
+import android.widget.Button;
+
+import com.QHTtest.R;
+import com.QHTtest.model.utils.Constant;
 import com.QHTtest.presenter.PostPresenter;
 
 /**
@@ -8,10 +13,13 @@ import com.QHTtest.presenter.PostPresenter;
  * content ：
  */
 
-public class SettingActivity extends BaseActivity {
+public class SettingActivity extends BaseActivity implements View.OnClickListener {
+
+    private Button signOut;
+
     @Override
     protected void initListener() {
-
+        signOut.setOnClickListener(this);
     }
 
     @Override
@@ -21,7 +29,7 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        signOut = (Button) findViewById(R.id.signOut);
     }
 
     @Override
@@ -31,6 +39,20 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     public int getLayout() {
-        return 0;
+        return R.layout.activity_set;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.signOut:
+                Constant.mSharedPreferencesEditor.clear();
+                Constant.mSharedPreferencesEditor.commit();
+                finish();
+                break;
+
+            default:
+                break;
+        }
     }
 }

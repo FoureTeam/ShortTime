@@ -12,7 +12,7 @@ import io.reactivex.functions.Consumer;
  * Title:
  * Thinking:
  * 作者：邹诗惠 on 2017/7/21 19:32
- */ 
+ */
 
 public class PostPresenter extends BasePresenter<DataIView> {
     public <T> void getPostData(Map<String, String> map, final Class<T> cla, String url) {
