@@ -69,6 +69,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         Drawable drawable = getResources().getDrawable(ic_drawable);
         drawable.setBounds(0, 0, 45, 45);
         textView.setCompoundDrawables(drawable, null, null, null);
+
     }
 
     @Override
