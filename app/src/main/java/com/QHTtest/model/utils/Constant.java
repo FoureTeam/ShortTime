@@ -2,6 +2,7 @@ package com.QHTtest.model.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
@@ -32,4 +33,5 @@ public class Constant {
         }
         return t;
     }
+
 }

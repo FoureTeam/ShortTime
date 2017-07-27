@@ -9,7 +9,8 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        style="@style/TextView.Toolbar" />
+        style="@style/TextView.Toolbar"
+        android:text="创作"/>
 
     <ImageView
         android:id="@+id/rightImageView"
