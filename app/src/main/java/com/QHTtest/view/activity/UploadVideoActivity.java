@@ -2,9 +2,11 @@ package com.QHTtest.view.activity;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 
 import com.QHTtest.R;
+import com.QHTtest.model.utils.Constant;
 import com.QHTtest.presenter.UpLoadPresenter;
 
 import java.io.File;
@@ -72,5 +74,22 @@ public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> {
         List<MultipartBody.Part> parts = builder.build().parts();
         mPresenter.filePost("media/uploadMedia", parts, null);
 
+    }
+    public void uploadImg(View view){
+        List<File> pathList = new ArrayList<>();
+        String path = Environment.getExternalStorageDirectory().getPath();
+        Log.i("memeda", "uploadImg: "+path);
+        pathList.add(new File(path+"/qw.jpeg"));
+        MultipartBody.Builder builder = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("mediaDescription","仇海涛--图片")
+                .addFormDataPart("mediaDictionaryValue","1")
+                .addFormDataPart("mediaUserId", Constant.mSharedPreferences.getString("userId",""));
+        for (int i = 0; i < pathList.size(); i++) {
+            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),pathList.get(i));
+            builder.addFormDataPart("file","qw.jpeg",requestBody);
+        }
+        List<MultipartBody.Part> multipartBodies = builder.build().parts();
+        mPresenter.filePost("media/uploadMedia",multipartBodies,null);
     }
 }

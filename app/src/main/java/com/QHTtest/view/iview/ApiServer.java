@@ -8,6 +8,7 @@ import okhttp3.MultipartBody;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.QueryMap;
@@ -32,5 +33,5 @@ public interface ApiServer {
     //post上传文件
     @Multipart
     @POST
-    Observable<String> filePost(@Url String url, @Part List<MultipartBody> partsList);
+    Observable<String> filePost(@Url String url, @Part List<MultipartBody.Part> partsList);
 }
