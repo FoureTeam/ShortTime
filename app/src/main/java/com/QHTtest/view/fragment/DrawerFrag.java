@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.QHTtest.R;
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.view.activity.LogInActivity;
+import com.QHTtest.view.activity.SettingActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -30,6 +31,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     private boolean userState;
     private TextView userName;
     private TextView signature;
+    private TextView setting1;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         circleImageView = (CircleImageView) view.findViewById(R.id.circleImageView_draw);
         userName = (TextView) view.findViewById(R.id.userName_draw);
         signature = (TextView) view.findViewById(R.id.signature_draw);
+        setting1 = (TextView) view.findViewById(R.id.setting_draw);
 
         //设置表头
         initRight(attention, R.mipmap.ic_draw_attention);
@@ -50,7 +53,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         initRight(searchFriend, R.mipmap.ic_draw_search);
         initRight(alerts, R.mipmap.ic_draw_alerts);
         initTop(works, R.mipmap.ic_draw_works);
-        initTop(setting, R.mipmap.ic_draw_setting);
+        initTop(setting1, R.mipmap.ic_draw_setting);
     }
     @Override
     public int getLayout() {
@@ -80,6 +83,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initeListener() {
         circleImageView.setOnClickListener(this);
+        setting.setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +92,8 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         if (userState){
             String userNameStr = Constant.mSharedPreferences.getString("userName","");
             userName.setText(userNameStr);
+        } else {
+            userName.setText("椰汁奶茶");
         }
         super.onResume();
     }
@@ -107,7 +113,10 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), LogInActivity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.setting_draw:
+                Intent settingIntent = new Intent(getActivity(), SettingActivity.class);
+                startActivity(settingIntent);
+                break;
             default:
                 break;
         }

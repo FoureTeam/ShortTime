@@ -32,6 +32,6 @@ public interface ApiServer {
 
     //post上传文件
     @Multipart
-    @POST()
+    @POST
     Observable<String> filePost(@Url String url, @Part List<MultipartBody.Part> partsList);
 }

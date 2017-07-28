@@ -146,12 +146,12 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
         if (loginBean!=null){
             int code = Integer.valueOf(loginBean.getCode());
             if (code==200){
-                Toast.makeText(LogInActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-                Constant.mSharedPreferencesEditor.putString("userId",loginBean.getUser().getUserId()+"");
-                Constant.mSharedPreferencesEditor.putString("userName",loginBean.getUser().getUserName());
-                Constant.mSharedPreferencesEditor.putBoolean("userState",true);
-                Constant.mSharedPreferencesEditor.commit();
-                finish();
+                    Toast.makeText(LogInActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                    Constant.mSharedPreferencesEditor.putString("userId",loginBean.getUser().getUserId()+"");
+                    Constant.mSharedPreferencesEditor.putString("userName",loginBean.getUser().getUserName());
+                    Constant.mSharedPreferencesEditor.putBoolean("userState",true);
+                    Constant.mSharedPreferencesEditor.commit();
+                    finish();
             }
         }
     }

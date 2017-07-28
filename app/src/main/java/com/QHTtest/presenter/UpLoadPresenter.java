@@ -2,7 +2,6 @@ package com.QHTtest.presenter;
 
 import android.util.Log;
 
-import com.QHTtest.model.utils.Constant;
 import com.QHTtest.model.utils.HttpUtils;
 import com.QHTtest.view.iview.DataIView;
 
