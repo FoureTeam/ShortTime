@@ -1,5 +1,7 @@
 package com.QHTtest.presenter;
 
+import android.util.Log;
+
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.model.utils.HttpUtils;
 import com.QHTtest.view.iview.DataIView;
@@ -16,17 +18,18 @@ import okhttp3.MultipartBody;
  */
 
 public class UpLoadPresenter extends BasePresenter<DataIView> {
-    public <T>void filePost(String url, List<MultipartBody> partsList, final Class<T> cla){
+    public <T>void filePost(String url, List<MultipartBody.Part> partsList, final Class<T> cla){
         HttpUtils.filePost(url, partsList, new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-                T t = Constant.GsonToBean(s, cla);
-                getView().callBackData(t);
+                Log.e("11111", s );
+//                T t = Constant.GsonToBean(s, cla);
+//                getView().callBackData(t);
             }
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-
+                Log.e("11111", throwable.toString() );
             }
         });
     }

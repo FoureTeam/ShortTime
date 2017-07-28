@@ -46,7 +46,7 @@ public class HttpUtils {
     }
 
     //文件上传
-    public static void filePost(String url, List<MultipartBody> partsList,Consumer<String> onNext,Consumer<Throwable> onError){
+    public static void filePost(String url, List<MultipartBody.Part> partsList,Consumer<String> onNext,Consumer<Throwable> onError){
         ApiServer api = retrofit.create(ApiServer.class);
         Observable<String> observable = api.filePost(url,partsList);
         observable.observeOn(AndroidSchedulers.mainThread())
