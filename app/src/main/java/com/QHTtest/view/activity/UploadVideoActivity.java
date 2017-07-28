@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.QHTtest.R;
 import com.QHTtest.model.utils.Constant;
@@ -25,9 +26,10 @@ import okhttp3.RequestBody;
  * 作者：邹诗惠 on 2017/7/27 09:38
  */
 
-public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> {
+public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> implements View.OnClickListener {
 
     private Map<String, String> map = new HashMap<>();
+    private ImageView leftImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> {
 
     @Override
     protected void initListener() {
-
+        leftImageView.setOnClickListener(this);
     }
 
     @Override
@@ -46,7 +48,7 @@ public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> {
 
     @Override
     protected void initView() {
-
+        leftImageView = (ImageView) findViewById(R.id.leftImageView);
     }
 
     @Override
@@ -91,5 +93,17 @@ public class UploadVideoActivity extends BaseActivity<UpLoadPresenter> {
         }
         List<MultipartBody.Part> multipartBodies = builder.build().parts();
         mPresenter.filePost("media/uploadMedia",multipartBodies,null);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.leftImageView:
+                finish();
+                break;
+
+            default:
+                break;
+        }
     }
 }
