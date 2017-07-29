@@ -21,18 +21,26 @@ public class DividerView extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        super.onDraw(c, parent, state);
+    public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDrawOver(c, parent, state); 
         int count = parent.getChildCount();
+        Paint paint = new Paint();
+        paint.setColor(Color.GRAY);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
         for (int i = 0; i < count; i++) {
             View view = parent.getChildAt(i);
             int left = view.getLeft();
             int right = view.getRight();
-            int top = view.getBottom()-10;
-            int bottom = view.getBottom();
-            Paint paint = new Paint();
-            paint.setColor(Color.BLUE);
+            int top = view.getBottom();
+            int bottom = view.getBottom()+2;
             c.drawRect(left,top,right,bottom,paint);
         }
+
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDraw(c, parent, state);
+
     }
 }
