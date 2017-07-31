@@ -3,11 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include layout="@layout/include_toolbar"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/ic_publ_background">
 
-    </RelativeLayout>
+    <com.QHTtest.view.constom.AttentionView
+        android:id="@+id/attentionView_recy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.QHTtest.view.constom.AttentionView>
 </LinearLayout>

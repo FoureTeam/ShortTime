@@ -237,7 +237,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
                 break;
             case R.id.home_toolbar_edit_img:
                 //跳转页面+Activity2.5跳转动画
-                Intent intent = new Intent(HomeActivity.this, UploadVideoActivity.class);
+                Intent intent = new Intent(HomeActivity.this, PublishedActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
                 break;
