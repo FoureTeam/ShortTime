@@ -1,5 +1,6 @@
 package com.QHTtest.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -47,6 +48,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     private ImageView register_back;
     private TextView reg_tourist_login;
     private SimpleDraweeView register_log;
+    private TextView regTextView_activityLogin;
 
 
     @Override
@@ -73,6 +75,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         register_back.setOnClickListener(this);
 
         reg_tourist_login.setOnClickListener(this);
+
+        regTextView_activityLogin.setOnClickListener(this);
     }
 
     @Override
@@ -101,6 +105,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
         register_log = (SimpleDraweeView) findViewById(R.id.register_log);
 
+        regTextView_activityLogin = (TextView) findViewById(R.id.regTextView_activityLogin);
     }
 
     @Override
@@ -163,6 +168,11 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
                 finish();
                 break;
             case R.id.reg_tourist_login:
+                finish();
+                break;
+            case R.id.regTextView_activityLogin:
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
                 finish();
                 break;
             default:

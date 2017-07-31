@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.LogInActivity" />
+        <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.PublishedActivity" />
         <activity android:name=".view.activity.UploadVideoActivity" />
         <activity android:name=".view.activity.UploadJokeActivity" />

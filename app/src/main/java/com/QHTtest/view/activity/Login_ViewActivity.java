@@ -69,7 +69,7 @@ public class Login_ViewActivity extends BaseActivity implements View.OnClickList
 
                 break;
             case R.id.morelogin:
-                Intent moreIntent = new Intent(Login_ViewActivity.this,LogInActivity.class);
+                Intent moreIntent = new Intent(Login_ViewActivity.this,LoginActivity.class);
                 startActivity(moreIntent);
                 break;
             default:

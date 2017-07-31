@@ -25,7 +25,7 @@ import java.util.Map;
  * 作者：邹诗惠 on 2017/7/21 19:31
  */
 
-public class LogInActivity extends BaseActivity<LoginPresenter> implements View.OnClickListener,DataIView<LoginBean> {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements View.OnClickListener,DataIView<LoginBean> {
 
     private ImageView login_back;
     private EditText usernameEditText_activityLogin;
@@ -122,7 +122,7 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
                 mPresenter.postLogin(map, LoginBean.class,"http://169.254.1.100:8080/yikezhong/user/addLogin");
                 break;
             case R.id.regTextView_activityLogin:
-                Intent intent = new Intent(LogInActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -139,7 +139,7 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
         if (loginBean!=null){
             int code = Integer.valueOf(loginBean.getCode());
             if (code==200){
-                    Toast.makeText(LogInActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                     Constant.mSharedPreferencesEditor.putString("userId",loginBean.getUser().getUserId()+"");
                     Constant.mSharedPreferencesEditor.putString("userName",loginBean.getUser().getUserName());
                     Constant.mSharedPreferencesEditor.putBoolean("userState",true);
