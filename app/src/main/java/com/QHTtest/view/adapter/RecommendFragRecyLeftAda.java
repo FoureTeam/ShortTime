@@ -20,7 +20,7 @@ import java.util.List;
  * Created by ASUS on 2017/6/14.
  */
 
-public class HomeRecyLeftAda extends RecyclerView.Adapter<HomeRecyLeftAda.MyViewHolder> {
+public class RecommendFragRecyLeftAda extends RecyclerView.Adapter<RecommendFragRecyLeftAda.MyViewHolder> {
     Context context;
     List<HomeBean.DatasBean.ClassListBean> class_list = new ArrayList<>();
     private Recy_OnClick onClick;
@@ -28,7 +28,7 @@ public class HomeRecyLeftAda extends RecyclerView.Adapter<HomeRecyLeftAda.MyView
     public void setOnClick(Recy_OnClick recy_onClick){
         this.onClick = recy_onClick;
     }
-    public HomeRecyLeftAda(Context context) {
+    public RecommendFragRecyLeftAda(Context context) {
         this.context = context;
     }
 

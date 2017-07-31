@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.QHTtest.R;
 import com.QHTtest.folding.FoldingPaneLayout;
 import com.QHTtest.presenter.HomePresenter;
-import com.QHTtest.view.adapter.HomeRecyLeftAda;
+import com.QHTtest.view.adapter.RecommendFragRecyLeftAda;
 import com.QHTtest.view.fragment.CrossTalkFrag;
 import com.QHTtest.view.fragment.DrawerFrag;
 import com.QHTtest.view.fragment.RecommendFrag;
@@ -31,7 +31,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
 
     private RecyclerView class_frag_recy;
     private Map<String, String> map = new HashMap<>();
-    private HomeRecyLeftAda ada;
+    private RecommendFragRecyLeftAda ada;
     private CircleImageView home_toolbar_head_img;
     private TextView home_toolbar_text;
     private ImageView home_toolbar_edit_img;
