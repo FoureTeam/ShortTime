@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.QHTtest.R;
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.view.activity.LogInActivity;
+import com.QHTtest.view.activity.MyWorksActivity;
 import com.QHTtest.view.activity.SettingActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -55,10 +56,12 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         initTop(works, R.mipmap.ic_draw_works);
         initTop(setting1, R.mipmap.ic_draw_setting);
     }
+
     @Override
     public int getLayout() {
         return R.layout.drawerfrag;
     }
+
     private void initTop(TextView textView, int ic_drawable) {
         //图片
         Drawable drawable = getResources().getDrawable(ic_drawable);
@@ -84,13 +87,14 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     protected void initeListener() {
         circleImageView.setOnClickListener(this);
         setting.setOnClickListener(this);
+        works.setOnClickListener(this);
     }
 
     @Override
     public void onResume() {
-        userState = Constant.mSharedPreferences.getBoolean("userState",false);
-        if (userState){
-            String userNameStr = Constant.mSharedPreferences.getString("userName","");
+        userState = Constant.mSharedPreferences.getBoolean("userState", false);
+        if (userState) {
+            String userNameStr = Constant.mSharedPreferences.getString("userName", "");
             userName.setText(userNameStr);
         } else {
             userName.setText("椰汁奶茶");
@@ -104,19 +108,24 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     }
 
 
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.circleImageView_draw:
+            case R.id.circleImageView_draw: {
                 Intent intent = new Intent(getActivity(), LogInActivity.class);
                 startActivity(intent);
-                break;
-            case R.id.setting_draw:
+            }
+            break;
+            case R.id.setting_draw: {
                 Intent settingIntent = new Intent(getActivity(), SettingActivity.class);
                 startActivity(settingIntent);
-                break;
+            }
+            break;
+            case R.id.works_draw: {
+                Intent workIntent = new Intent(getActivity(), MyWorksActivity.class);
+                startActivity(workIntent);
+            }
+            break;
             default:
                 break;
         }

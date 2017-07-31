@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.QHTtest">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.AttentionActivity">
+        <activity android:name=".view.activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +24,12 @@
         </activity>
         <activity android:name=".view.activity.LogInActivity" />
         <activity android:name=".view.activity.PublishedActivity" />
-        <activity android:name=".view.activity.UploadVideoActivity"/>
+        <activity android:name=".view.activity.UploadVideoActivity" />
         <activity android:name=".view.activity.UploadJokeActivity" />
-        <activity android:name=".view.activity.SettingActivity"/>
-        <activity android:name=".view.activity.RegisterActivity"/>
+        <activity android:name=".view.activity.SettingActivity" />
+        <activity android:name=".view.activity.RegisterActivity" />
+        <activity android:name=".view.activity.AttentionActivity" />
+        <activity android:name=".view.activity.MyWorksActivity" />
 
     </application>
 
