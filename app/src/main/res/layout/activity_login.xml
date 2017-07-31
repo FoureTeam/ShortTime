@@ -1,50 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLinearLayout"
-    style="@style/Layout.Linear">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ic_login_bg"
+>
 
-    <include
-        android:id="@+id/topInclude_activityLogin"
-        layout="@layout/include_toolbar" />
+    <TextView
+        android:id="@+id/regTextView_activityLogin"
+        style="@style/TextView.LoginTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册账号" android:textSize="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+     />
+    <ImageView android:id="@+id/login_back"
+               android:layout_width="39dp"
+               android:layout_height="39dp"
+               android:padding="10dp"
+               android:src="@mipmap/raw_1500023215"
+    />
 
     <LinearLayout
         android:id="@+id/contentLinearLayout_activityLogin"
-        style="@style/Layout.Login">
+        style="@style/Layout.Login"
+        android:layout_above="@+id/loginTextView_activityLogin"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/line_color_main_add"
+    >
 
         <EditText
             android:id="@+id/usernameEditText_activityLogin"
-            style="@style/EditText.UserPhone" />
-
+            style="@style/EditText.UserPhone"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/white"
+        />
         <EditText
             android:id="@+id/passwordEditText_activityLogin"
-            style="@style/EditText.Password" />
+            style="@style/EditText.Password"/>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/loginTextView_activityLogin"
-        style="@style/TextView.Login" />
-
-    <RelativeLayout
-        style="@style/Layout.HeightWarp"
-        android:paddingLeft="24dip"
-        android:paddingRight="24dip">
-
-        <TextView
-            android:id="@+id/regTextView_activityLogin"
-            style="@style/TextView.LoginTips"
-            android:text="注册账号" />
-
-        <TextView
-            android:id="@+id/backTextView_activityLogin"
-            style="@style/TextView.LoginTips"
-            android:layout_alignParentRight="true"
-            android:text="找回密码" />
-
-    </RelativeLayout>
+        style="@style/TextView.Login"
+        android:layout_centerInParent="true"
+    />
 
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/backTextView_activityLogin"
+        style="@style/TextView.LoginTips"
+        android:layout_alignEnd="@+id/loginTextView_activityLogin"
+        android:layout_alignRight="@+id/loginTextView_activityLogin"
+        android:layout_below="@+id/loginTextView_activityLogin"
+        android:text="忘记密码"/>
+
+
+    <TextView
+        android:id="@+id/tourist_login"
+        style="@style/TextView.LoginTips"
+        android:layout_below="@+id/backTextView_activityLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="游客登陆"
+        android:textSize="16dp"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/login_log"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_above="@+id/contentLinearLayout_activityLogin"
+        android:layout_centerHorizontal="true"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundBottomLeft="true"
+        fresco:roundBottomRight="true"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="true"
+        fresco:roundedCornerRadius="30dp"/>
+</RelativeLayout>
 
 
 

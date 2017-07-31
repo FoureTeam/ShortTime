@@ -47,4 +47,5 @@ dependencies {
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
     //tablayout (和view pager联用)
     compile 'com.android.support:design:22.2.0'
+    compile 'com.facebook.fresco:fresco:1.4.0'
 }

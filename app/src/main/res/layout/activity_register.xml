@@ -1,37 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLinearLayout"
-    style="@style/Layout.Linear">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mainLinearLayout"
+                android:background="@mipmap/ic_login_bg"
+                style="@style/Layout.Linear">
 
-    <include
-        android:id="@+id/topInclude_activityReg"
-        layout="@layout/include_toolbar" />
+    <ImageView android:id="@+id/register_back"
+               android:layout_width="39dp"
+               android:layout_height="39dp"
+               android:padding="10dp"
+               android:src="@mipmap/raw_1500023215"
+    />
 
     <LinearLayout
         android:id="@+id/contentLinearLayout_activityReg"
+        android:background="@drawable/line_color_main_add"
+        android:layout_centerInParent="true"
         style="@style/Layout.Login">
 
         <EditText
             android:id="@+id/userName_Reg"
-            style="@style/EditText.Username" />
-
+            style="@style/EditText.Username"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/white"
+        />
         <EditText
             android:id="@+id/userPassword_Reg"
-            style="@style/EditText.Password" />
-
+            style="@style/EditText.Password"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/white"
+        />
 
         <EditText
             android:id="@+id/userPhone_Reg"
-            style="@style/EditText.UserPhone" />
+            style="@style/EditText.UserPhone"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/white"
+        />
         <EditText
             android:id="@+id/userSex_Reg"
-            style="@style/EditText.Email" />
+            style="@style/EditText.Email"/>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/regTextView_Reg"
         style="@style/TextView.Login"
-        android:text="注 册" />
-
-</LinearLayout>
+        android:text="注 册"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/contentLinearLayout_activityReg"/>
+    <TextView
+        android:id="@+id/reg_tourist_login"
+        style="@style/TextView.LoginTips"
+        android:layout_marginTop="32dp"
+        android:text="游客登陆"
+        android:textSize="16dp" android:layout_below="@+id/regTextView_Reg"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/regTextView_activityLogin"
+        style="@style/TextView.LoginTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:text="已有账号？" android:textSize="16dp"
+        />
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/register_log"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundBottomLeft="true"
+        fresco:roundBottomRight="true"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="true"
+        fresco:roundedCornerRadius="30dp"
+        style="@style/Reg_Log"/>
+</RelativeLayout>

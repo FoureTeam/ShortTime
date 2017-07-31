@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.AttentionActivity">
+        <activity android:name=".view.activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,8 @@
         <activity android:name=".view.activity.UploadJokeActivity" />
         <activity android:name=".view.activity.SettingActivity"/>
         <activity android:name=".view.activity.RegisterActivity"/>
-
+        <activity android:name=".view.activity.AttentionActivity"/>
+        <activity android:name=".view.activity.Login_ViewActivity"/>
     </application>
 
 </manifest>

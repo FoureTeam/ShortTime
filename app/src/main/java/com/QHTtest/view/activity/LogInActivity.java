@@ -1,7 +1,6 @@
 package com.QHTtest.view.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +14,7 @@ import com.QHTtest.model.bean.LoginBean;
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.presenter.LoginPresenter;
 import com.QHTtest.view.iview.DataIView;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,12 +27,9 @@ import java.util.Map;
 
 public class LogInActivity extends BaseActivity<LoginPresenter> implements View.OnClickListener,DataIView<LoginBean> {
 
-    private ImageView leftImageView;
-    private TextView titleTextView;
-    private ImageView rightImageView;
+    private ImageView login_back;
     private EditText usernameEditText_activityLogin;
     private EditText passwordEditText_activityLogin;
-    private LinearLayout contentLinearLayout_activityLogin;
     private TextView loginTextView_activityLogin;
     private TextView regTextView_activityLogin;
     private TextView backTextView_activityLogin;
@@ -40,24 +37,19 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
     private Map<String,String> map = new HashMap<>();
     private String activityLogin;
     private String activityLoginpws;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private TextView tourist_login;
+    private SimpleDraweeView login_log;
 
     @Override
     protected void initListener() {
-        leftImageView.setOnClickListener(this);
-        titleTextView.setOnClickListener(this);
-        rightImageView.setOnClickListener(this);
+        login_back.setOnClickListener(this);
+
         passwordEditText_activityLogin.setOnClickListener(this);
         usernameEditText_activityLogin.setOnClickListener(this);
         regTextView_activityLogin.setOnClickListener(this);
         backTextView_activityLogin.setOnClickListener(this);
         loginTextView_activityLogin.setOnClickListener(this);
-        mainLinearLayout.setOnClickListener(this);
+        tourist_login.setOnClickListener(this);
     }
 
     @Override
@@ -68,11 +60,7 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
     @Override
     protected void initView() {
 
-        leftImageView = (ImageView) findViewById(R.id.leftImageView);
-
-        titleTextView = (TextView) findViewById(R.id.titleTextView);
-
-        rightImageView = (ImageView) findViewById(R.id.rightImageView);
+        login_back = (ImageView) findViewById(R.id.login_back);
 
         usernameEditText_activityLogin = (EditText) findViewById(R.id.usernameEditText_activityLogin);
 
@@ -84,13 +72,15 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
 
         backTextView_activityLogin = (TextView) findViewById(R.id.backTextView_activityLogin);
 
-        mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
+        tourist_login = (TextView) findViewById(R.id.tourist_login);
+
+        login_log = (SimpleDraweeView) findViewById(R.id.login_log);
 
     }
 
     @Override
     protected void initData() {
-
+        login_log.setImageResource(R.mipmap.log);
     }
 
     @Override
@@ -122,7 +112,7 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.leftImageView:
+            case R.id.login_back:
                 finish();
                 break;
             case R.id.loginTextView_activityLogin:
@@ -134,6 +124,9 @@ public class LogInActivity extends BaseActivity<LoginPresenter> implements View.
             case R.id.regTextView_activityLogin:
                 Intent intent = new Intent(LogInActivity.this,RegisterActivity.class);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.tourist_login:
                 finish();
                 break;
             default:

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.QHTtest.model.utils.Constant;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.Set;
 
@@ -23,6 +24,7 @@ public class MyApplication extends Application {
         super.onCreate();
         instance = this;
         Constant.init(this);
+        Fresco.initialize(this);
     }
 
 }

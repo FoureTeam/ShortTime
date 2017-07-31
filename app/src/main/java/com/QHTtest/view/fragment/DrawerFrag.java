@@ -8,10 +8,13 @@ import android.widget.TextView;
 
 import com.QHTtest.R;
 import com.QHTtest.model.utils.Constant;
-import com.QHTtest.view.activity.LogInActivity;
+import com.QHTtest.view.activity.AttentionActivity;
+import com.QHTtest.view.activity.Login_ViewActivity;
 import com.QHTtest.view.activity.SettingActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.QHTtest.R.id.left_my;
 
 /**
  * Created by 仇海涛 on 2017/7/21.
@@ -32,6 +35,7 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     private TextView userName;
     private TextView signature;
     private TextView setting1;
+
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
@@ -84,6 +88,8 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     protected void initeListener() {
         circleImageView.setOnClickListener(this);
         setting.setOnClickListener(this);
+        attention.setOnClickListener(this);
+
     }
 
     @Override
@@ -110,12 +116,19 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.circleImageView_draw:
-                Intent intent = new Intent(getActivity(), LogInActivity.class);
+                Intent intent = new Intent(getActivity(), Login_ViewActivity.class);
                 startActivity(intent);
                 break;
             case R.id.setting_draw:
                 Intent settingIntent = new Intent(getActivity(), SettingActivity.class);
                 startActivity(settingIntent);
+                break;
+            case R.id.attention_draw:
+                Intent attentionIntent = new Intent(getActivity(), AttentionActivity.class);
+                startActivity(attentionIntent);
+                break;
+            case left_my:
+
                 break;
             default:
                 break;

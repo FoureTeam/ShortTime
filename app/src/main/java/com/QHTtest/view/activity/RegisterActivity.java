@@ -13,6 +13,7 @@ import com.QHTtest.R;
 import com.QHTtest.model.bean.RegisterBean;
 import com.QHTtest.presenter.RegisterPresenter;
 import com.QHTtest.view.iview.DataIView;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,14 +37,17 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     private EditText userSex_Reg;
     private LinearLayout contentLinearLayout_activityReg;
     private TextView regTextView_Reg;
-    private LinearLayout mainLinearLayout;
+
 
     private Map<String,String> map = new HashMap<>();
     private String userNameReg;
     private String userPasswordReg;
     private String userPhoneReg;
     private String userSexReg;
-    private ImageView leftImageView1;
+    private ImageView register_back;
+    private TextView reg_tourist_login;
+    private SimpleDraweeView register_log;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +57,6 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     protected void initListener() {
-        leftImageView.setOnClickListener(this);
-
-        titleTextView.setOnClickListener(this);
-
-        rightImageView.setOnClickListener(this);
 
         userName_Reg.setOnClickListener(this);
 
@@ -71,9 +70,9 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
         regTextView_Reg.setOnClickListener(this);
 
-        mainLinearLayout.setOnClickListener(this);
+        register_back.setOnClickListener(this);
 
-        leftImageView.setOnClickListener(this);
+        reg_tourist_login.setOnClickListener(this);
     }
 
     @Override
@@ -83,14 +82,6 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
     @Override
     protected void initView() {
-
-        leftImageView = (ImageView) findViewById(R.id.leftImageView);
-
-        leftImageView1 = (ImageView) findViewById(R.id.leftImageView);
-
-        titleTextView = (TextView) findViewById(R.id.titleTextView);
-
-        rightImageView = (ImageView) findViewById(R.id.rightImageView);
 
         userName_Reg = (EditText) findViewById(R.id.userName_Reg);
 
@@ -104,13 +95,17 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
         regTextView_Reg = (TextView) findViewById(R.id.regTextView_Reg);
 
-        mainLinearLayout = (LinearLayout) findViewById(R.id.mainLinearLayout);
+        register_back = (ImageView) findViewById(R.id.register_back);
+
+        reg_tourist_login = (TextView) findViewById(R.id.reg_tourist_login);
+
+        register_log = (SimpleDraweeView) findViewById(R.id.register_log);
 
     }
 
     @Override
     protected void initData() {
-
+        register_log.setImageResource(R.mipmap.log);
     }
 
     @Override
@@ -164,7 +159,10 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
                 mPresenter.postRegister(map, RegisterBean.class,"http://169.254.1.100:8080/yikezhong/user/addUser");
                 break;
-            case R.id.leftImageView:
+            case R.id.register_back:
+                finish();
+                break;
+            case R.id.reg_tourist_login:
                 finish();
                 break;
             default:
