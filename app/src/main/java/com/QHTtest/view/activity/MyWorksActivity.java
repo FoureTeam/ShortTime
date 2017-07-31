@@ -11,8 +11,6 @@ import com.QHTtest.R;
 import com.QHTtest.presenter.HomePresenter;
 import com.QHTtest.view.adapter.RecommendFragVpAdapter;
 import com.QHTtest.view.fragment.LocalWorkFragment;
-import com.QHTtest.view.fragment.RecommendAttentionFrag;
-import com.QHTtest.view.fragment.RecommendHotFrag;
 import com.QHTtest.view.fragment.UploadedFragment;
 
 import java.util.ArrayList;
@@ -35,7 +33,7 @@ public class MyWorksActivity extends BaseActivity<HomePresenter> implements View
 
     @Override
     protected void initListener() {
-
+        back.setOnClickListener(this);
     }
 
     @Override
@@ -47,7 +45,7 @@ public class MyWorksActivity extends BaseActivity<HomePresenter> implements View
     protected void initView() {
         content_myWorks = (ViewPager) findViewById(R.id.content_myWorks);
         title_myWorks = (TabLayout) findViewById(R.id.title_myWorks);
-        back = (TextView) findViewById(R.id.left_my);
+        back = (TextView) findViewById(R.id.back);
         title = (TextView) findViewById(R.id.title_my);
         nothing = (TextView) findViewById(R.id.right_my);
         title.setText("我的作品");
@@ -94,6 +92,13 @@ public class MyWorksActivity extends BaseActivity<HomePresenter> implements View
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back:
+                finish();
+                break;
 
+            default:
+                break;
+        }
     }
 }

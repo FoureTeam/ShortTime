@@ -3,7 +3,7 @@
     style="@style/Layout.LinearHor">
 
     <TextView
-        android:id="@+id/left_my"
+        android:id="@+id/back"
         style="@style/TextView.MyTitle"
         android:text="返回" />
 

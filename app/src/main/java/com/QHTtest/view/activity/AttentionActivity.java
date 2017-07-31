@@ -8,6 +8,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.QHTtest.R;
 import com.QHTtest.presenter.PostPresenter;
@@ -29,7 +32,7 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
     private SwipeRefreshLayout swipe;
     private AttentionRecyleAdapter adapter;
     private List<String> s;
-    private TextView back;
+
     private TextView hot;
     private TextView left_my;
 
@@ -43,7 +46,7 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
     @Override
     protected void initListener() {
         initPullRefresh();
-        back.setOnClickListener(this);
+
         hot.setOnClickListener(this);
         left_my.setOnClickListener(this);
     }
@@ -57,7 +60,7 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
     protected void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView_atte);
         swipe = (SwipeRefreshLayout) findViewById(R.id.swipe_atte);
-        back = (TextView) findViewById(R.id.left_my);
+        left_my = (TextView) findViewById(R.id.back);
         hot = (TextView) findViewById(R.id.right_my);
         hot.setText("热门关注");
     }
@@ -85,7 +88,6 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
         recyclerView.setLayoutManager(gridLayoutManager);
     }
 
-    //添加虚拟数据
     private void initHttp() {
         s = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
@@ -95,6 +97,7 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
         recyclerView.setAdapter(adapter);
 
     }
+
 
     //上拉刷新
     private void initPullRefresh() {
@@ -121,8 +124,8 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.left_my: {
-                Toast.makeText(AttentionActivity.this,"返回",Toast.LENGTH_SHORT).show();
+            case R.id.back: {
+                finish();
             }
             break;
             case R.id.right_my: {
@@ -132,15 +135,5 @@ public class AttentionActivity extends BaseActivity<PostPresenter> implements Vi
 
         }
     }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.left_my:
-                finish();
-                break;
 
-            default:
-                break;
-        }
-    }
 }
