@@ -22,7 +22,7 @@ public class DividerView extends RecyclerView.ItemDecoration {
 
     @Override
     public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        super.onDrawOver(c, parent, state); 
+        super.onDrawOver(c, parent, state);
         int count = parent.getChildCount();
         Paint paint = new Paint();
         paint.setColor(Color.GRAY);
