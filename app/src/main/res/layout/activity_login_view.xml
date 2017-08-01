@@ -12,20 +12,16 @@
                android:padding="10dp"
                android:src="@mipmap/raw_1500023215"
     />
-    <com.facebook.drawee.view.SimpleDraweeView
+    <com.QHTtest.view.MyView.MyImageView
         android:id="@+id/login_view_log"
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_below="@+id/login_view_back"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:roundAsCircle="true"
-        fresco:roundTopLeft="true"
-        fresco:roundTopRight="true"
-        fresco:roundBottomLeft="true"
-        fresco:roundBottomRight="true"
-        fresco:roundedCornerRadius="30dp"
+        fresco:borderRadius="10dp"
+        fresco:type="round"
+        android:src="@mipmap/log"
     />
     <LinearLayout android:id="@+id/login_linearLayout_01"
                   android:layout_width="200dp"

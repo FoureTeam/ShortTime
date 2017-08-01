@@ -12,4 +12,16 @@
     <declare-styleable name="FoldingMenu">
         <attr name="foldNumber" format="integer" />
     </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+
+    <declare-styleable name="MyImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
 </resources>
