@@ -14,16 +14,14 @@
         <include layout="@layout/include_jokes_message" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="天气美美的,适合郊游"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:id="@+id/describe_video"
+            style="@style/TextView.recomDescribe"
+            android:text="天气美美的,适合郊游" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="180sp"
-            android:layout_marginTop="10dp" />
+            android:id="@+id/uploadImg_video"
+            style="@style/ImageView_uploadImg"
+            android:src="@mipmap/ic_draw_background" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,19 +30,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="骑猪上高速"
-                android:textColor="@color/royalblue" />
+                android:id="@+id/godCommentsUserOne_video"
+                style="@style/TextView_godCommentsUser"
+                android:text="骑猪上高速" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextView_colon"
                 android:text=" : " />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/godCommentsDetailsOne_video"
+                style="@style/TextView_colon"
                 android:text="不错" />
         </LinearLayout>
 
@@ -56,19 +52,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="骑猪上高速"
-                android:textColor="@color/royalblue" />
+                android:id="@+id/godCommentsUserTwo_video"
+                style="@style/TextView_godCommentsUser"
+                android:text="骑猪上高速" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextView_colon"
                 android:text=" : " />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/godCommentsDetailsTwo_video"
+                style="@style/TextView_colon"
                 android:text="不错" />
         </LinearLayout>
     </LinearLayout>

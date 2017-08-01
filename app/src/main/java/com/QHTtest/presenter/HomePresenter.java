@@ -1,5 +1,7 @@
 package com.QHTtest.presenter;
 
+import android.util.Log;
+
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.model.utils.HttpUtils;
 import com.QHTtest.view.iview.DataIView;
@@ -16,12 +18,13 @@ import io.reactivex.functions.Consumer;
 
 public class HomePresenter extends BasePresenter<DataIView> {
 
-    public <T> void getHomeRecyData(Map<String, String> map, final Class<T> cla,String url) {
+    public <T> void getHomeRecyData(Map<String, String> map, final Class<T> cla, String url) {
         HttpUtils.get(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
 
                 T t = Constant.GsonToBean(s, cla);
+                Log.e("get", t.toString());
                 getView().callBackData(t);
 
             }
@@ -30,7 +33,7 @@ public class HomePresenter extends BasePresenter<DataIView> {
             public void accept(Throwable throwable) throws Exception {
 
             }
-        }, map,url);
+        }, map, url);
     }
 
 }

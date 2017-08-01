@@ -162,7 +162,11 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@color/colortoolbar</item>
     </style>
-
+    <style name="Layout.LinearJokesInformation" parent="Control">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
     <style name="TextView.Tool" parent="Control">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -288,6 +292,31 @@
         <item name="android:layout_above">@+id/contentLinearLayout_activityReg</item>
         <item name="android:layout_alignRight">@+id/reg_tourist_login</item>
     </style>
+
+    <style name="TextView.recomDescribe" parent="Control">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ImageView_uploadImg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="TextView_colon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextView_godCommentsUser">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/royalblue</item>
+    </style>
+
 
 
 </resources>
