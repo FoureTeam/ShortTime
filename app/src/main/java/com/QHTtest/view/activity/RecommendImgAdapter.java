@@ -3,6 +3,7 @@ package com.QHTtest.view.activity;
 import android.content.Context;
 import android.media.Image;
 import android.net.Uri;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import com.QHTtest.R;
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.gui.ninegrideview.LGNineGrideView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,18 +51,18 @@ public class RecommendImgAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
-            convertView = View.inflate(mContext, R.layout.grid_recommended_message, null);
+            convertView = ((LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.grid_recommended_message,parent,false);
             holder = new ViewHolder();
-            holder.imageView = (ImageView) convertView.findViewById(R.id.image_grid);
+            holder.grideView=(LGNineGrideView)convertView.findViewById(R.id.nine_gride);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        Glide.with(mContext).load(mList.get(position)).placeholder(R.mipmap.ic_launcher).into(holder.imageView);
+//        holder.grideView.setUrls(mList.get(position).toString());
         return convertView;
     }
 
     class ViewHolder {
-        ImageView imageView;
+        LGNineGrideView grideView;
     }
 }

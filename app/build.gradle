@@ -48,4 +48,6 @@ dependencies {
     //tablayout (和view pager联用)
     compile 'com.android.support:design:22.2.0'
     compile 'com.facebook.fresco:fresco:1.4.0'
+    compile project(':ninegrideview')
+    compile project(':library')
 }

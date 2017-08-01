@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.QHTtest.R;
 import com.QHTtest.model.bean.RecommendHotBean;
 import com.QHTtest.view.activity.RecommendImgAdapter;
+import com.gui.ninegrideview.LGNineGrideView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +84,7 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
             break;
             case 1: {
                 ViewHolderTwo holderTwo = (ViewHolderTwo) holder;
-                holderTwo.uploadImg_img.setVisibility(View.GONE);
+                holderTwo.grideView.setVisibility(View.GONE);
                 holderTwo.userNameTwo.setText(list.get(position).getUser().getUserName());
                 holderTwo.introduceTwo.setText(list.get(position).getUptime());
                 holderTwo.describe_img.setText(list.get(position).getContent());
@@ -90,11 +92,16 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
             }
             case 2: {
                 ViewHolderTwo holderTwo = (ViewHolderTwo) holder;
-                holderTwo.uploadImg_img.setVisibility(View.VISIBLE);
+                holderTwo.grideView.setVisibility(View.VISIBLE);
                 imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
-                imgUri.add("  http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
-                holderTwo.uploadImg_img.setNumColumns(2);
-                holderTwo.uploadImg_img.setAdapter(new RecommendImgAdapter(mContext,imgUri));
+                imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
+                imgUri.add("http://img5.imgtn.bdimg.com/it/u=1046983545,2051560208&fm=26&gp=0.jpg");
+                imgUri.add("http://img5.imgtn.bdimg.com/it/u=1046983545,2051560208&fm=26&gp=0.jpg");
+                imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
+                imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
+                imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
+                imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
+                holderTwo.grideView.setUrls(imgUri);
                 holderTwo.userNameTwo.setText(list.get(position).getUser().getUserName());
                 holderTwo.introduceTwo.setText(list.get(position).getUptime());
                 holderTwo.describe_img.setText(list.get(position).getContent());
@@ -136,11 +143,12 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
         private final TextView userNameTwo;
         private final TextView introduceTwo;
         private final TextView describe_img;
-        private final GridView uploadImg_img;
+        //        private final ListView uploadImg_img;
         private final TextView godCommentsUserOne_img;
         private final TextView godCommentsDetailsOne_img;
         private final TextView godCommentsUserTwo_img;
         private final TextView godCommentsDetailsTwo_img;
+        private LGNineGrideView grideView;
 
         public ViewHolderTwo(View itemView) {
             super(itemView);
@@ -148,11 +156,11 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
             userNameTwo = (TextView) itemView.findViewById(R.id.userName_jm);
             introduceTwo = (TextView) itemView.findViewById(R.id.introduce_jm);
             describe_img = (TextView) itemView.findViewById(R.id.describe_img);
-            uploadImg_img = (GridView) itemView.findViewById(R.id.uploadImg_img);
             godCommentsUserOne_img = (TextView) itemView.findViewById(R.id.godCommentsUserOne_img);
             godCommentsDetailsOne_img = (TextView) itemView.findViewById(R.id.godCommentsDetailsOne_img);
             godCommentsUserTwo_img = (TextView) itemView.findViewById(R.id.godCommentsUserTwo_img);
             godCommentsDetailsTwo_img = (TextView) itemView.findViewById(R.id.godCommentsDetailsTwo_img);
+            grideView = (LGNineGrideView) itemView.findViewById(R.id.nine_gride);
         }
     }
 
