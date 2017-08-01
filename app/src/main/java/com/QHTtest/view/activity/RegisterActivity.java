@@ -154,7 +154,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
                 map.put("userPhone",userPhoneReg);
                 map.put("userSex",userSexReg);
 
-                mPresenter.postRegister(map, RegisterBean.class,"http://169.254.1.100:8080/yikezhong/user/addUser");
+                mPresenter.postRegister(map, RegisterBean.class,"http://169.254.1.100/yikezhong/user/addUser");
                 break;
             case R.id.register_back:
                 finish();
