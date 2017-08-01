@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +13,6 @@ import com.QHTtest.model.bean.LoginBean;
 import com.QHTtest.model.utils.Constant;
 import com.QHTtest.presenter.LoginPresenter;
 import com.QHTtest.view.iview.DataIView;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,12 +31,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements View.
     private TextView loginTextView_activityLogin;
     private TextView regTextView_activityLogin;
     private TextView backTextView_activityLogin;
-    private LinearLayout mainLinearLayout;
     private Map<String,String> map = new HashMap<>();
     private String activityLogin;
     private String activityLoginpws;
     private TextView tourist_login;
-    private SimpleDraweeView login_log;
 
     @Override
     protected void initListener() {
@@ -74,13 +70,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements View.
 
         tourist_login = (TextView) findViewById(R.id.tourist_login);
 
-        login_log = (SimpleDraweeView) findViewById(R.id.login_log);
-
     }
 
     @Override
     protected void initData() {
-        login_log.setImageResource(R.mipmap.log);
+
     }
 
     @Override

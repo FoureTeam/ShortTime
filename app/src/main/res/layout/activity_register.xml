@@ -69,14 +69,14 @@
         android:layout_alignParentRight="true"
         android:text="已有账号？" android:textSize="16dp"
         />
-    <com.facebook.drawee.view.SimpleDraweeView
+    <com.QHTtest.view.MyView.MyImageView
         android:id="@+id/register_log"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:roundAsCircle="true"
-        fresco:roundBottomLeft="true"
-        fresco:roundBottomRight="true"
-        fresco:roundTopLeft="true"
-        fresco:roundTopRight="true"
-        fresco:roundedCornerRadius="30dp"
-        style="@style/Reg_Log"/>
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        fresco:borderRadius="10dp"
+        fresco:type="round"
+        android:src="@mipmap/log"
+        android:layout_above="@+id/contentLinearLayout_activityReg"
+        android:layout_alignLeft="@+id/reg_tourist_login"
+        android:layout_alignStart="@+id/reg_tourist_login" android:layout_marginBottom="30dp"/>
 </RelativeLayout>

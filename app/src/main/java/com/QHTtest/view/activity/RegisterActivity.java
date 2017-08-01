@@ -14,7 +14,6 @@ import com.QHTtest.R;
 import com.QHTtest.model.bean.RegisterBean;
 import com.QHTtest.presenter.RegisterPresenter;
 import com.QHTtest.view.iview.DataIView;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,10 +25,6 @@ import java.util.Map;
  */
 
 public class RegisterActivity extends BaseActivity<RegisterPresenter> implements View.OnClickListener,DataIView<RegisterBean> {
-
-    private ImageView leftImageView;
-    private TextView titleTextView;
-    private ImageView rightImageView;
 
     private EditText userName_Reg;
     private EditText userPassword_Reg;
@@ -47,7 +42,6 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     private String userSexReg;
     private ImageView register_back;
     private TextView reg_tourist_login;
-    private SimpleDraweeView register_log;
     private TextView regTextView_activityLogin;
 
 
@@ -103,14 +97,12 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
         reg_tourist_login = (TextView) findViewById(R.id.reg_tourist_login);
 
-        register_log = (SimpleDraweeView) findViewById(R.id.register_log);
-
         regTextView_activityLogin = (TextView) findViewById(R.id.regTextView_activityLogin);
     }
 
     @Override
     protected void initData() {
-        register_log.setImageResource(R.mipmap.log);
+
     }
 
     @Override

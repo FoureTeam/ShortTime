@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.QHTtest.R;
 import com.QHTtest.presenter.HomePresenter;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
  * Created by 仇海涛 on 2017/7/31.
@@ -22,7 +21,6 @@ public class Login_ViewActivity extends BaseActivity implements View.OnClickList
     private LinearLayout weixinlogin;
     private LinearLayout qQlogin;
     private TextView morelogin;
-    private SimpleDraweeView login_view_log;
 
     @Override
     protected void initListener() {
@@ -43,12 +41,11 @@ public class Login_ViewActivity extends BaseActivity implements View.OnClickList
         weixinlogin = (LinearLayout) findViewById(R.id.login_linearLayout_01);
         qQlogin = (LinearLayout) findViewById(R.id.login_linearLayout_02);
         morelogin = (TextView) findViewById(R.id.morelogin );
-        login_view_log = (SimpleDraweeView) findViewById(R.id.login_view_log);
     }
 
     @Override
     protected void initData() {
-        login_view_log.setImageResource(R.mipmap.log);
+
     }
 
     @Override
@@ -71,6 +68,7 @@ public class Login_ViewActivity extends BaseActivity implements View.OnClickList
             case R.id.morelogin:
                 Intent moreIntent = new Intent(Login_ViewActivity.this,LoginActivity.class);
                 startActivity(moreIntent);
+                finish();
                 break;
             default:
                 break;

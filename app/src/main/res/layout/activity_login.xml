@@ -70,19 +70,16 @@
         android:text="游客登陆"
         android:textSize="16dp"/>
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <com.QHTtest.view.MyView.MyImageView
         android:id="@+id/login_log"
         android:layout_width="66dp"
         android:layout_height="66dp"
         android:layout_above="@+id/contentLinearLayout_activityLogin"
         android:layout_centerHorizontal="true"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:roundAsCircle="true"
-        fresco:roundBottomLeft="true"
-        fresco:roundBottomRight="true"
-        fresco:roundTopLeft="true"
-        fresco:roundTopRight="true"
-        fresco:roundedCornerRadius="30dp"/>
+        fresco:borderRadius="10dp"
+        fresco:type="round"
+        android:src="@mipmap/log"
+        />
 </RelativeLayout>
 
 
