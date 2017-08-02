@@ -25,6 +25,7 @@ public class MyApplication extends Application {
         instance = this;
         Constant.init(this);
         Fresco.initialize(this);
+        
     }
 
 }
