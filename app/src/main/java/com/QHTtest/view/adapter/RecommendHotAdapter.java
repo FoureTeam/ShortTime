@@ -41,32 +41,40 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
+        //多条目显示
         if (position == 0) {
             //list.get(position).getDictionaryValue().equals("1")
+            //视频 0
             return 0;
         } else if (list.get(position).getDictionaryValue().equals("2")) {
+            //文字 1
             return 1;
         } else {
+            //图片+文字 2
             return 2;
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = null;
+        View view;
         RecyclerView.ViewHolder holder = null;
+        //设置布局
         switch (viewType) {
             case 0: {
+                //视频布局
                 view = LayoutInflater.from(mContext).inflate(R.layout.recycler_recommended_video, parent, false);
                 holder = new ViewHolderOne(view);
                 break;
             }
             case 1: {
+                //纯文字视频
                 view = LayoutInflater.from(mContext).inflate(R.layout.recycler_recommended_img, parent, false);
                 holder = new ViewHolderTwo(view);
             }
             break;
             case 2: {
+                //图片+文字视频
                 view = LayoutInflater.from(mContext).inflate(R.layout.recycler_recommended_img, parent, false);
                 holder = new ViewHolderTwo(view);
             }
@@ -144,7 +152,6 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
         private final TextView userNameTwo;
         private final TextView introduceTwo;
         private final TextView describe_img;
-        //        private final ListView uploadImg_img;
         private final TextView godCommentsUserOne_img;
         private final TextView godCommentsDetailsOne_img;
         private final TextView godCommentsUserTwo_img;
@@ -165,6 +172,7 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
         }
 
         private void initListener(View itemView) {
+            //图片监听
             grideView.setOnItemClickListener(new LGNineGrideView.OnItemClickListener() {
                 @Override
                 public void onClickItem(int position, View view) {
@@ -178,7 +186,7 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
 
     }
 
-
+    //下拉加载数据
     public void addHeaderItem(List<RecommendHotBean.ResourceBean> list) {
         this.list.addAll(0, list);
         notifyDataSetChanged();
