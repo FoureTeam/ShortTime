@@ -2,7 +2,6 @@ package com.QHTtest.model.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
@@ -15,7 +14,7 @@ import com.google.gson.Gson;
 
 public class Constant {
     public static String SYSTEM_SHARE_NAME="config";
-    public static final String LINK_MAIN = "http://169.254.1.100:8080/yikezhong/";
+    public static final String LINK_MAIN = "http://169.254.1.100/quarter/";
     public static SharedPreferences mSharedPreferences;
     public static SharedPreferences.Editor mSharedPreferencesEditor;
     public static Gson gson;

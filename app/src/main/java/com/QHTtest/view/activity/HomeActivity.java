@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.QHTtest.R;
 import com.QHTtest.folding.FoldingPaneLayout;
+import com.QHTtest.model.utils.Constant;
 import com.QHTtest.presenter.HomePresenter;
 import com.QHTtest.view.adapter.RecommendFragRecyLeftAda;
 import com.QHTtest.view.fragment.CrossTalkFrag;
@@ -20,6 +21,8 @@ import com.QHTtest.view.fragment.RecommendFrag;
 import com.QHTtest.view.fragment.VideoFrag;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +47,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     private ArrayList<Fragment> fragments;
     private Toolbar home_toolbar;
     private FoldingPaneLayout home_drawer;
+    private boolean userState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,6 +227,25 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
     @Override
     public void onTabReselected(int position) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        userState = Constant.mSharedPreferences.getBoolean("userState", false);
+        if (userState) {
+            String userNameStr = Constant.mSharedPreferences.getString("userName", "");
+            String uri = Constant.mSharedPreferences.getString("uri","");
+            //userName.setText(userNameStr);
+            Glide
+                    .with(this)
+                    .load(uri)
+                    .priority(Priority.HIGH)
+                    .into(home_toolbar_head_img);
+        } else {
+            //userName.setText("椰汁奶茶");
+            home_toolbar_head_img.setImageResource(R.mipmap.raw_1499936862);
+        }
+        super.onResume();
     }
 
     @Override

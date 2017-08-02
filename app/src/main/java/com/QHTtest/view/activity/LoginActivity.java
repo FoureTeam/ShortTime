@@ -113,7 +113,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements View.
                 submit();
                 map.put("userPassword",activityLoginpws+"");
                 map.put("userPhone",activityLogin);
-                mPresenter.postLogin(map, LoginBean.class,"http://169.254.1.100/quarter/user/addLogin");
+                mPresenter.postLogin(map, LoginBean.class,"user/addLogin");
                 break;
             case R.id.regTextView_activityLogin:
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
