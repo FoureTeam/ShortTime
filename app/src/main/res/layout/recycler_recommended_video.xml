@@ -21,6 +21,7 @@
         <ImageView
             android:id="@+id/uploadImg_video"
             style="@style/ImageView_uploadImg"
+            android:layout_height="180dp"
             android:src="@mipmap/ic_draw_background" />
 
         <LinearLayout

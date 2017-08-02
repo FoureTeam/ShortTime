@@ -30,11 +30,8 @@
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.AttentionActivity" />
         <activity android:name=".view.activity.MyWorksActivity" />
-
-        <activity android:name=".view.activity.SettingActivity"/>
-        <activity android:name=".view.activity.RegisterActivity"/>
-        <activity android:name=".view.activity.AttentionActivity"/>
-        <activity android:name=".view.activity.Login_ViewActivity"/>
+        <activity android:name=".view.activity.Login_ViewActivity" />
+        <activity android:name=".view.activity.ViewPagerActivity" />
     </application>
 
 </manifest>

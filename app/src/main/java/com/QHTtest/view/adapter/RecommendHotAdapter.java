@@ -1,6 +1,7 @@
 package com.QHTtest.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.QHTtest.R;
 import com.QHTtest.model.bean.RecommendHotBean;
 import com.QHTtest.view.activity.RecommendImgAdapter;
+import com.QHTtest.view.activity.ViewPagerActivity;
 import com.gui.ninegrideview.LGNineGrideView;
 
 import java.util.ArrayList;
@@ -40,7 +43,7 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
     public int getItemViewType(int position) {
         if (position == 0) {
             //list.get(position).getDictionaryValue().equals("1")
-            return 2;
+            return 0;
         } else if (list.get(position).getDictionaryValue().equals("2")) {
             return 1;
         } else {
@@ -93,15 +96,13 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
             case 2: {
                 ViewHolderTwo holderTwo = (ViewHolderTwo) holder;
                 holderTwo.grideView.setVisibility(View.VISIBLE);
-                imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
-                imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
-                imgUri.add("http://img5.imgtn.bdimg.com/it/u=1046983545,2051560208&fm=26&gp=0.jpg");
                 imgUri.add("http://img5.imgtn.bdimg.com/it/u=1046983545,2051560208&fm=26&gp=0.jpg");
                 imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
                 imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
                 imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
                 imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
                 holderTwo.grideView.setUrls(imgUri);
+                holderTwo.initListener(holderTwo.grideView);
                 holderTwo.userNameTwo.setText(list.get(position).getUser().getUserName());
                 holderTwo.introduceTwo.setText(list.get(position).getUptime());
                 holderTwo.describe_img.setText(list.get(position).getContent());
@@ -162,7 +163,21 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
             godCommentsDetailsTwo_img = (TextView) itemView.findViewById(R.id.godCommentsDetailsTwo_img);
             grideView = (LGNineGrideView) itemView.findViewById(R.id.nine_gride);
         }
+
+        private void initListener(View itemView) {
+            grideView.setOnItemClickListener(new LGNineGrideView.OnItemClickListener() {
+                @Override
+                public void onClickItem(int position, View view) {
+                    Intent intent = new Intent(mContext, ViewPagerActivity.class);
+                    intent.putExtra("position", position);
+                    intent.putStringArrayListExtra(ViewPagerActivity.KEY_IMAGE_URLS, (ArrayList<String>) imgUri);
+                    mContext.startActivity(intent);
+                }
+            });
+        }
+
     }
+
 
     public void addHeaderItem(List<RecommendHotBean.ResourceBean> list) {
         this.list.addAll(0, list);
