@@ -48,6 +48,8 @@ dependencies {
     //tablayout (和view pager联用)
     compile 'com.android.support:design:22.2.0'
     compile 'com.facebook.fresco:fresco:1.4.0'
+    compile project(':ninegrideview')
+    compile project(':library')
     compile files('libs/SocialSDK_QQ_Simplify.jar')
     compile files('libs/umeng_shareboard_widget.jar')
     compile files('libs/umeng_social_api.jar')

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_jokes_message" />
+
+        <TextView
+            android:id="@+id/describe_video"
+            style="@style/TextView.recomDescribe"
+            android:text="天气美美的,适合郊游" />
+
+        <ImageView
+            android:id="@+id/uploadImg_video"
+            style="@style/ImageView_uploadImg"
+            android:layout_height="180dp"
+            android:src="@mipmap/ic_draw_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/godCommentsUserOne_video"
+                style="@style/TextView_godCommentsUser"
+                android:text="骑猪上高速" />
+
+            <TextView
+                style="@style/TextView_colon"
+                android:text=" : " />
+
+            <TextView
+                android:id="@+id/godCommentsDetailsOne_video"
+                style="@style/TextView_colon"
+                android:text="不错" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/godCommentsUserTwo_video"
+                style="@style/TextView_godCommentsUser"
+                android:text="骑猪上高速" />
+
+            <TextView
+                style="@style/TextView_colon"
+                android:text=" : " />
+
+            <TextView
+                android:id="@+id/godCommentsDetailsTwo_video"
+                style="@style/TextView_colon"
+                android:text="不错" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
