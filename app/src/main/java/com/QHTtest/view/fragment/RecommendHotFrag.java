@@ -3,7 +3,6 @@ package com.QHTtest.view.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.QHTtest.R;
@@ -48,7 +47,7 @@ public class RecommendHotFrag extends BaseFragment<HomePresenter> implements Dat
     protected void createPresenter() {
         presenter = new HomePresenter();
         presenter.attactView(this);
-        presenter.getHomeRecyData(map, RecommendHotBean.class,"http://169.254.1.100/quarter/user/findHot");
+        presenter.getHomeRecyData(map, RecommendHotBean.class,"user/findHot");
     }
 
     @Override

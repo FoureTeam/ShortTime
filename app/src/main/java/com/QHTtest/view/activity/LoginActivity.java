@@ -2,6 +2,7 @@ package com.QHTtest.view.activity;
 
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -135,6 +136,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements View.
             if (code==200){
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                     Constant.mSharedPreferencesEditor.putString("userId",loginBean.getUser().getUserId()+"");
+                    Log.d("memeda", "callBackData: "+loginBean.getUser().getUserId());
                     Constant.mSharedPreferencesEditor.putString("userName",loginBean.getUser().getUserName());
                     Constant.mSharedPreferencesEditor.putBoolean("userState",true);
                     Constant.mSharedPreferencesEditor.commit();

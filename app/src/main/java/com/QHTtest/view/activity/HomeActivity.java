@@ -234,7 +234,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements BottomN
         userState = Constant.mSharedPreferences.getBoolean("userState", false);
         if (userState) {
             String userNameStr = Constant.mSharedPreferences.getString("userName", "");
-            String uri = Constant.mSharedPreferences.getString("uri","");
+            String uri = Constant.mSharedPreferences.getString("uri","http://v1.qzone.cc/avatar/201409/24/19/58/5422b1ff86ed0232.jpg%21200x200.jpg");
             //userName.setText(userNameStr);
             Glide
                     .with(this)
