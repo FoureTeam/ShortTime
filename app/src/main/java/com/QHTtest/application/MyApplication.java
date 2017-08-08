@@ -5,6 +5,8 @@ import android.app.Application;
 
 import com.QHTtest.model.utils.Constant;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 
 import java.util.Set;
 
@@ -16,6 +18,10 @@ import java.util.Set;
 
 public class MyApplication extends Application {
 
+    {
+        PlatformConfig.setQQZone("1106247411", "lxXvi47PhWUT3kDH");
+    }
+
     private static MyApplication instance;
     private Set<Activity> allActivities;
 
@@ -25,6 +31,7 @@ public class MyApplication extends Application {
         instance = this;
         Constant.init(this);
         Fresco.initialize(this);
+        UMShareAPI.get(this);
     }
 
 }

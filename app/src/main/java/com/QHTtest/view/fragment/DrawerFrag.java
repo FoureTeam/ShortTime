@@ -12,6 +12,8 @@ import com.QHTtest.view.activity.AttentionActivity;
 import com.QHTtest.view.activity.Login_ViewActivity;
 import com.QHTtest.view.activity.MyWorksActivity;
 import com.QHTtest.view.activity.SettingActivity;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -98,9 +100,16 @@ public class DrawerFrag extends BaseFragment implements View.OnClickListener {
         userState = Constant.mSharedPreferences.getBoolean("userState", false);
         if (userState) {
             String userNameStr = Constant.mSharedPreferences.getString("userName", "");
+            String uri = Constant.mSharedPreferences.getString("uri","");
             userName.setText(userNameStr);
+            Glide
+                    .with(this)
+                    .load(uri)
+                    .priority(Priority.HIGH)
+                    .into(circleImageView);
         } else {
             userName.setText("椰汁奶茶");
+            circleImageView.setImageResource(R.mipmap.raw_1499936862);
         }
         super.onResume();
     }
