@@ -18,13 +18,13 @@ import io.reactivex.functions.Consumer;
 
 public class HomePresenter extends BasePresenter<DataIView> {
 
-    public <T> void getHomeRecyData(Map<String, String> map, final Class<T> cla, String url) {
+    public <T> void getData(Map<String, String> map, final Class<T> cla, String url) {
         HttpUtils.get(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
-
+                Log.e("memeda", s.toString());
                 T t = Constant.GsonToBean(s, cla);
-                Log.e("get", t.toString());
+
                 getView().callBackData(t);
 
             }

@@ -24,4 +24,6 @@
         <attr name="borderRadius" />
         <attr name="type" />
     </declare-styleable>
+
+
 </resources>

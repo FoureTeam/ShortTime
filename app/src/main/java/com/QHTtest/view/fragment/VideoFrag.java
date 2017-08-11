@@ -35,6 +35,11 @@ public class VideoFrag extends BaseFragment {
 
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+    }
+
     //数据加载
     @Override
     protected void initData() {

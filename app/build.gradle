@@ -24,7 +24,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     // Retrofit
@@ -47,7 +46,6 @@ dependencies {
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
     //tablayout (和view pager联用)
     compile 'com.android.support:design:22.2.0'
-    compile 'com.facebook.fresco:fresco:1.4.0'
     compile project(':ninegrideview')
     compile project(':library')
     compile files('libs/SocialSDK_QQ_Simplify.jar')
@@ -56,4 +54,11 @@ dependencies {
     compile files('libs/umeng_social_net.jar')
     compile files('libs/umeng_social_shareboard.jar')
     compile files('libs/umeng_social_tool.jar')
+    //悬浮u按钮
+    compile 'com.cpacm:floatingmusicmenu:1.0.0'
+    //SmartRefreshLayout 下拉刷新
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3-alpha-2'
+    compile 'com.facebook.fresco:fresco:1.5.0'
+
+    compile 'com.facebook.fresco:animated-gif:1.5.0'
 }

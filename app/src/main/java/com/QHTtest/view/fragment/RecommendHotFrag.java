@@ -47,7 +47,7 @@ public class RecommendHotFrag extends BaseFragment<HomePresenter> implements Dat
     protected void createPresenter() {
         presenter = new HomePresenter();
         presenter.attactView(this);
-        presenter.getHomeRecyData(map, RecommendHotBean.class,"user/findHot");
+        presenter.getData(map, RecommendHotBean.class,"user/findHot");
     }
 
     @Override
