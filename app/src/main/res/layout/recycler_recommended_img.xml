@@ -23,9 +23,7 @@
             android:id="@+id/nine_gride"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="20dp"
             android:paddingRight="60dp"
-            android:paddingTop="10dp"
             app:singleImageRatioMode="@integer/SINGLE_IMAGE_MODE_RELATIVE_TO_SELF"
             app:space="10dp"></com.gui.ninegrideview.LGNineGrideView>
     </LinearLayout>

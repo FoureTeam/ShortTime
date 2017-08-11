@@ -110,10 +110,17 @@ public class RecommendHotAdapter extends RecyclerView.Adapter {
                 imgUri.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
                 imgUri.add("http://www.wallcoo.com/cartoon/colors_in_japanese_style/wallpapers/1600x1200/colors_and_flower_pattern_in_japanese_style_wa01_004le.jpg");
                 holderTwo.grideView.setUrls(imgUri);
+                imgUri.clear();
                 holderTwo.initListener(holderTwo.grideView);
                 holderTwo.userNameTwo.setText(list.get(position).getUser().getUserName());
                 holderTwo.introduceTwo.setText(list.get(position).getUptime());
-                holderTwo.describe_img.setText(list.get(position).getContent());
+                if ("".equals(list.get(position).getContent())) {
+                    holderTwo.describe_img.setVisibility(View.GONE);
+                } else {
+                    holderTwo.describe_img.setVisibility(View.VISIBLE);
+                    holderTwo.describe_img.setText(list.get(position).getContent());
+                }
+
             }
             break;
         }
