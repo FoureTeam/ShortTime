@@ -62,9 +62,11 @@
         <activity android:name=".view.activity.MyWorksActivity" />
         <activity android:name=".view.activity.Login_ViewActivity" />
         <activity android:name=".view.activity.ViewPagerActivity" />
-    </application>
-    <meta-data
+
+        <meta-data
         android:name="UMENG_APPKEY"
         android:value="597ff9ee1c5dd059f8000015" >
     </meta-data>
+    </application>
+
 </manifest>
